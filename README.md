@@ -17,7 +17,7 @@ Extensão Burp para detectar padrões JavaScript inseguros que podem permitir by
 git clone https://github.com/harley-ghostie/Login_Bypass-BurpExtender
 ```
 ```bash
-cd login-bypass
+cd Login_Bypass-BurpExtender
 ```
 
 ## 🛠️ Como compilar
