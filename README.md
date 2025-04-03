@@ -20,3 +20,12 @@ Extensão Burp para detectar padrões JavaScript inseguros que podem permitir by
 ```bash
 chmod +x build_extensao.sh
 ./build_extensao.sh
+
+## 🧩 4. Baixe a Montoya API
+
+Se ainda não tem, baixe aqui:  
+🔗 [https://portswigger.net/burp/documentation/montoya](https://portswigger.net/burp/documentation/montoya)
+
+Ou clone o repo:  
+```bash
+git clone https://github.com/PortSwigger/burp-extensions-montoya-api.git
