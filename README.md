@@ -41,7 +41,7 @@ chmod +x build_extensao.sh
 ```
 O script vai gerar o arquivo login_bypass_montoya.jar, pronto para ser carregado no Burp Suite.
 
-##🔌 Como instalar no Burp Suite
+## 🔌 Como instalar no Burp Suite
 Abra o Burp
 
 Vá em Extender > Extensions > Add
