@@ -12,6 +12,14 @@ Extensão Burp para detectar padrões JavaScript inseguros que podem permitir by
 
 - Output direto no **Burp > Extender > Output**
 
+## 📥 Clone este repositório
+```bash
+git clone https://github.com/harley-ghostie/login-bypass.git
+```
+```bash
+cd login-bypass
+```
+
 ## 🛠️ Como compilar
 
 ### 1. Clone a Montoya API (obrigatório)
@@ -35,7 +43,13 @@ O script vai gerar o arquivo login_bypass_montoya.jar, pronto para ser carregado
 
 ##🔌 Como instalar no Burp Suite
 Abra o Burp
+
 Vá em Extender > Extensions > Add
+
 Tipo: Java
+
 Arquivo: selecione login_bypass_montoya.jar
+
 Veja os logs em Extender > Output
+
+
