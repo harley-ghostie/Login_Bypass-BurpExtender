@@ -12,20 +12,34 @@ Extensão Burp para detectar padrões JavaScript inseguros que podem permitir by
 
 - Output direto no **Burp > Extender > Output**
 
-## ⚙️ Como compilar
+## 🛠️ Como compilar
 
-1. Baixe o JAR da Montoya API e salve em `lib/burp-montoya-api.jar`
-2. Execute:
+### 1. Clone a Montoya API (obrigatório)
 
 ```bash
+git clone https://github.com/PortSwigger/burp-extensions-montoya-api.git
+
+### 2. Copie o JAR da API para sua pasta local
+
+cp burp-extensions-montoya-api/lib/burp-montoya-api.jar lib/
+
+Ou crie a pasta se ainda não existir: mkdir -p lib
+
+### 3. Compile a extensão com o script
+
 chmod +x build_extensao.sh
 ./build_extensao.sh
 
-## 🧩 4. Baixe a Montoya API
+O script vai gerar o arquivo login_bypass_montoya.jar, pronto para ser carregado no Burp Suite.
 
-Se ainda não tem, baixe aqui:  
-🔗 [https://portswigger.net/burp/documentation/montoya](https://portswigger.net/burp/documentation/montoya)
+##🔌 Como instalar no Burp Suite
 
-Ou clone o repo:  
-```bash
-git clone https://github.com/PortSwigger/burp-extensions-montoya-api.git
+    Abra o Burp
+
+    Vá em Extender > Extensions > Add
+
+    Tipo: Java
+
+    Arquivo: selecione login_bypass_montoya.jar
+
+    Veja os logs em Extender > Output
