@@ -2,6 +2,7 @@
 
 Extensão Burp para detectar padrões JavaScript inseguros que podem permitir bypass de autenticação.
 
+Versão de API Montoya
 ## 🚀 Funcionalidade
 
 - Detecta:
