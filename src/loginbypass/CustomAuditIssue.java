@@ -2,18 +2,16 @@ package loginbypass;
 
 import burp.api.montoya.http.HttpService;
 import burp.api.montoya.http.message.HttpRequestResponse;
+import burp.api.montoya.http.message.requests.HttpRequest;
+import burp.api.montoya.http.Url;
 import burp.api.montoya.scanner.audit.issues.AuditIssue;
 import burp.api.montoya.scanner.audit.issues.AuditIssueConfidence;
 import burp.api.montoya.scanner.audit.issues.AuditIssueDefinition;
 import burp.api.montoya.scanner.audit.issues.AuditIssueSeverity;
-import burp.api.montoya.http.message.requests.HttpRequest;
-import burp.api.montoya.http.message.responses.HttpResponse;
-import burp.api.montoya.core.Registration;
-import burp.api.montoya.core.RegistrationHandler;
-import burp.api.montoya.core.Url;
 
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
+import burp.api.montoya.collaborator.Interaction;
 
 public class CustomAuditIssue implements AuditIssue {
 
@@ -108,4 +106,10 @@ public class CustomAuditIssue implements AuditIssue {
     public Url baseUrl() {
         return httpMessages.get(0).request().url();
     }
+
+    @Override
+    public List<Interaction> collaboratorInteractions() {
+        return Collections.emptyList();
+    }
 }
+
