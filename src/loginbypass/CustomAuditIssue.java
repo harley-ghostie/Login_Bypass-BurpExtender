@@ -3,15 +3,14 @@ package loginbypass;
 import burp.api.montoya.http.HttpService;
 import burp.api.montoya.http.message.HttpRequestResponse;
 import burp.api.montoya.http.message.requests.HttpRequest;
-import burp.api.montoya.http.Url;
 import burp.api.montoya.scanner.audit.issues.AuditIssue;
 import burp.api.montoya.scanner.audit.issues.AuditIssueConfidence;
 import burp.api.montoya.scanner.audit.issues.AuditIssueDefinition;
 import burp.api.montoya.scanner.audit.issues.AuditIssueSeverity;
+import burp.api.montoya.collaborator.Interaction;
 
 import java.util.Collections;
 import java.util.List;
-import burp.api.montoya.collaborator.Interaction;
 
 public class CustomAuditIssue implements AuditIssue {
 
@@ -42,6 +41,11 @@ public class CustomAuditIssue implements AuditIssue {
     }
 
     @Override
+    public String name() {
+        return name;
+    }
+
+    @Override
     public AuditIssueDefinition definition() {
         return new AuditIssueDefinition() {
             @Override
@@ -51,8 +55,8 @@ public class CustomAuditIssue implements AuditIssue {
 
             @Override
             public String background() {
-                return "Autenticação realizada exclusivamente no lado do cliente usando JavaScript é vulnerável a bypass. "
-                        + "O código pode ser facilmente manipulado no console do navegador, permitindo acesso não autorizado.";
+                return "Autenticação client-side é inerentemente insegura. "
+                        + "Trechos de código JavaScript que manipulam login ou tokens podem ser utilizados para contornar autenticação.";
             }
 
             @Override
@@ -62,7 +66,7 @@ public class CustomAuditIssue implements AuditIssue {
 
             @Override
             public int typeIndex() {
-                return 0; // Personalizado
+                return 0;
             }
 
             @Override
@@ -103,8 +107,8 @@ public class CustomAuditIssue implements AuditIssue {
     }
 
     @Override
-    public Url baseUrl() {
-        return httpMessages.get(0).request().url();
+    public String baseUrl() {
+        return httpMessages.get(0).request().url().toString();
     }
 
     @Override
