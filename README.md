@@ -1,5 +1,11 @@
 # 🔐 login_bypass (Burp Montoya Extension)
 
+![Status](https://img.shields.io/badge/STATUS-EM%20DESENVOLVIMENTO-brightgreen?style=for-the-badge)
+> [!NOTE]
+> Projeto em desenvolvimento.
+>
+> Este repositório reúne scripts de apoio para validação técnica e triagem de segurança. Os scripts podem passar por ajustes, refatoração e melhorias de precisão conforme novos cenários forem testados.
+
 Extensão Burp para detectar padrões JavaScript inseguros que podem permitir bypass de autenticação.
 
 Versão de API Montoya
